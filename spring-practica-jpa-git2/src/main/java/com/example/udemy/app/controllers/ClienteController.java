@@ -90,6 +90,7 @@ public class ClienteController {
 	@RequestMapping(value = "/form")
 	public String crear(Map<String, Object> model) {
 		Cliente cliente = new Cliente();
+		
 		model.put("cliente", cliente);
 		model.put("titulo", "Formulario de Cliente");
 		return "form";
