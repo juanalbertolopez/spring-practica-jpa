@@ -67,6 +67,7 @@ public class ClienteController {
 		Cliente cliente = clienteService.findOne(id);
 		if (cliente == null) {
 			flash.addFlashAttribute("error", "El cliente no existe en la base ed datos");
+			//Estamos realizando una prueba
 			return "redirect:/listar";
 		}
 		model.put("cliente", cliente);
