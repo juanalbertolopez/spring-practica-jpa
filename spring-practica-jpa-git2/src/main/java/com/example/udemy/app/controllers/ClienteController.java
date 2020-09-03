@@ -54,7 +54,8 @@ public class ClienteController {
 		Resource recurso = null;
 		try {
 			recurso = uploadFileService.load(filename);
-		}catch (MalformedURLException e){
+			//comentario 2
+		}catch (MalformedURLException e){//comentario 3
 			e.printStackTrace();
 		}
 		
