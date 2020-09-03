@@ -54,6 +54,7 @@ public class ClienteController {
 		Resource recurso = null;
 		try {
 			recurso = uploadFileService.load(filename);
+			//primera prueba de conflicto
 		}catch (MalformedURLException e){
 			e.printStackTrace();
 		}
