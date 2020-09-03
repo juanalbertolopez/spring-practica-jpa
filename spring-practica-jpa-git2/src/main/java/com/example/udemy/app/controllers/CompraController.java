@@ -68,6 +68,7 @@ public class CompraController {
 			flash.addFlashAttribute("error", "El proveedor no existe en la base de datos");
 		return "redirect:/listar";
 		}
+		//hola soy un cambio
 		
 		Compra compra = new Compra();
 		compra.setProveedor(proveedor);
