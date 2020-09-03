@@ -49,7 +49,7 @@ public class ClienteController {
 
 	private final static String UPLOADS_FOLDER ="uploads";
 
-	@GetMapping(value = "/uploads/{filename:.+}")
+	/*@GetMapping(value = "/uploads/{filename:.+}")
 	public ResponseEntity<Resource> verFoto(@PathVariable String filename) {
 		Resource recurso = null;
 		try {
@@ -58,10 +58,11 @@ public class ClienteController {
 		}catch (MalformedURLException e){
 			e.printStackTrace();
 		}
+		
 		return ResponseEntity.ok()
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=\"" + recurso.getFilename() + "\" ")
 				.body(recurso);
-	}
+	}*/
 
 	@GetMapping(value = "/ver/{id}")
 	public String ver(@PathVariable(value = "id") Long id, Map<String, Object> model, RedirectAttributes flash) {
@@ -73,7 +74,6 @@ public class ClienteController {
 		}
 		model.put("cliente", cliente);
 		model.put("titulo", "Detalle cliente: " + cliente.getNombre());
-
 		return "ver";
 	}
 
@@ -83,6 +83,7 @@ public class ClienteController {
 		Page<Cliente> clientes = clienteService.findAll(pageRequest);
 		PageRender<Cliente> pageRender = new PageRender<>("/listar", clientes);
 
+		
 		model.addAttribute("titulo", "Listado de Clientes");
 		
 		model.addAttribute("clientes", clientes);
@@ -97,6 +98,7 @@ public class ClienteController {
 		model.put("cliente", cliente);
 		model.put("titulo", "Formulario de Cliente");
 		return "form";
+		
 	}
 
 	@RequestMapping(value = "/form/{id}")
