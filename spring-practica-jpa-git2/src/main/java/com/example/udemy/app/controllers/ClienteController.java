@@ -82,6 +82,7 @@ public class ClienteController {
 		PageRender<Cliente> pageRender = new PageRender<>("/listar", clientes);
 
 		model.addAttribute("titulo", "Listado de Clientes");
+		
 		model.addAttribute("clientes", clientes);
 		model.addAttribute("page", pageRender);
 		return "listar";
