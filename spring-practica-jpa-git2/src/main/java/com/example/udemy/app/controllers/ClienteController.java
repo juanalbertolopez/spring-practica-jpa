@@ -54,8 +54,8 @@ public class ClienteController {
 		Resource recurso = null;
 		try {
 			recurso = uploadFileService.load(filename);
-			//comentario 2
-		}catch (MalformedURLException e){//comentario 3
+			//primera prueba de conflicto
+		}catch (MalformedURLException e){
 			e.printStackTrace();
 		}
 		
@@ -69,6 +69,7 @@ public class ClienteController {
 		Cliente cliente = clienteService.findOne(id);
 		if (cliente == null) {
 			flash.addFlashAttribute("error", "El cliente no existe en la base ed datos");
+			//Estamos realizando una prueba
 			return "redirect:/listar";
 		}
 		model.put("cliente", cliente);
